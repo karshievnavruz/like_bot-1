@@ -52,4 +52,13 @@ def get_image(update:Update, context:CallbackContext):
         )
     
 
+def callback_like(update:Update, context:CallbackContext):
+    query = update.callback_query
+    # Get query data
+    data = query.data
+
+    
+    query.answer('You selected {}'.format(data))
+    # query.edit_message_text(text="Selected option: {}".format(query.data))
+
     
