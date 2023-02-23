@@ -1,6 +1,6 @@
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackContext
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 import logging
 import requests
 # Handler for /start command
@@ -32,4 +32,24 @@ def get_image(update:Update, context:CallbackContext):
     response = requests.post(url, json=payload)
     # Print status code
     print(response.status_code)
-    update.message.reply_text('Got image')
+    keyboard = InlineKeyboardMarkup([
+        [
+        InlineKeyboardButton("Like 👍", callback_data='like'),
+        InlineKeyboardButton("Dislike 👎", callback_data='dislike')
+        
+        ]
+    ])
+
+
+    
+    channel_id = '@image_like'
+    # Send image to channel
+    context.bot.send_photo(
+        chat_id=channel_id, 
+        photo=image_id,
+        caption="Like this image to get 10 likes back",
+        reply_markup=keyboard
+        )
+    
+
+    
