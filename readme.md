@@ -35,6 +35,7 @@ The purpose of this document is to provide a detailed specification for a like a
 Reliability
 - The system should be available 24/7.
 - The system should be able to recover from any failures, such as server downtime or database errors.
+
 ### Security
 
 The system should prevent unauthorized access to the database.
@@ -54,3 +55,6 @@ The system should use HTTPS to encrypt data transmitted between the user and the
 ## Conclusion
 
 This Software Requirements Specification document outlines the functional and non-functional requirements, as well as the constraints for the development of a like and dislike feature using inline buttons in the Telegram Bot API. The feature will allow users to like or dislike image messages, which will be recorded in a database. The system should be reliable, performant, secure, and scalable to handle an increasing number of users and image messages.
+
+
+[setting.md](settings.md)
