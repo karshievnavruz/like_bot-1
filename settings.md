@@ -24,9 +24,10 @@ pip install -r requirements.txt
 echo "venv" >> .gitignore
 ```
 
-# Set environment variables
+## Set environment variables
 
-## Telegram bot token
+The following environment variables are required to run the bot:
+-Telegram bot token
 
 ```bash
 export TOKEN="your token"
