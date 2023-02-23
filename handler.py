@@ -34,8 +34,8 @@ def get_image(update:Update, context:CallbackContext):
     print(response.status_code)
     keyboard = InlineKeyboardMarkup([
         [
-        InlineKeyboardButton("Like 👍", callback_data='like'),
-        InlineKeyboardButton("Dislike 👎", callback_data='dislike')
+        InlineKeyboardButton("Like 👍", callback_data=f'like:{message_id}'),
+        InlineKeyboardButton("Dislike 👎", callback_data=f'dislike:{message_id}')
         
         ]
     ])
@@ -55,10 +55,18 @@ def get_image(update:Update, context:CallbackContext):
 def callback_like(update:Update, context:CallbackContext):
     query = update.callback_query
     # Get query data
-    data = query.data
+    like,message_id = query.data.split(':')
+    #  Get user id
+    user_id = query.from_user.id
+    # Get message id
+    
+
 
     
-    query.answer('You selected {}'.format(data))
+    query.answer(
+        f'User id: {user_id}, Message id: {message_id} Data: {like}', 
+        show_alert=True
+        )
     # query.edit_message_text(text="Selected option: {}".format(query.data))
 
     
