@@ -27,7 +27,8 @@ echo "venv" >> .gitignore
 ## Set environment variables
 
 The following environment variables are required to run the bot:
--Telegram bot token
+
+- Telegram bot token
 
 ```bash
 export TOKEN="your token"
