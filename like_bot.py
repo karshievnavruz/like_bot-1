@@ -1,6 +1,7 @@
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackContext
 from telegram import Update
+from handler import start
 import logging
 
 import os
@@ -14,9 +15,6 @@ updater = Updater(token=TOKEN)
 # Dispatcher
 dp = updater.dispatcher
 
-# Handler for /start command
-def start(update:Update, context:CallbackContext):
-    update.message.reply_text('Hi!')
 
 
 dp.add_handler(CommandHandler('start', start))
